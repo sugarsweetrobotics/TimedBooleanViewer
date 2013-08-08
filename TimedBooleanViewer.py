@@ -176,7 +176,9 @@ class TimedBooleanViewer(OpenRTM_aist.DataFlowComponentBase):
 		#
 		#
 	def onExecute(self, ec_id):
-	
+		if self._inIn.isNew():
+			v = self._inIn.read()
+			print v
 		return RTC.RTC_OK
 	
 	#	##
